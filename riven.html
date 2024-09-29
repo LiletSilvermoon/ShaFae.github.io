@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Webpage featuring detailed information about Riven Nightshade from JSON data">
+    <title>Character Details - Riven Nightshade</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #121212;
+            color: #E0E0E0;
+        }
+        h1, h2, h3 {
+            color: #67C7EB;
+        }
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: #1E1E1E;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+        }
+        img {
+            width: 100%;
+            max-width: 600px;
+            display: block;
+            margin: 0 auto;
+        }
+        a {
+            color: #4FC3F7;
+            text-decoration: none;
+            display: inline-block;
+            margin-top: 20px;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        .footer {
+            text-align: center;
+            padding: 20px 0;
+            margin-top: 30px;
+            color: #AAA;
+            font-size: 0.8rem;
+        }
+        .character-details {
+            background: #2A2A2A;
+            padding: 15px;
+            margin-top: 20px;
+            border-radius: 8px;
+        }
+        .character-details h3 {
+            color: #67C7EB;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        li {
+            margin-bottom: 8px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Character Details - Riven Nightshade</h1>
+        <img src="riven.png" alt="Riven Nightshade - a character from the novel Frost and Shadow">
+        <div class="character-details" id="character-info">
+            <h2>Character Information</h2>
+            <h3 id="name"></h3>
+            <p id="description"></p>
+            <h3>Appearance</h3>
+            <ul id="appearance"></ul>
+            <h3>Personality</h3>
+            <ul id="personality"></ul>
+            <h3>Abilities</h3>
+            <ul id="abilities"></ul>
+            <h3>Background</h3>
+            <p id="background"></p>
+            <h3>Relationships</h3>
+            <ul id="relationships"></ul>
+            <h3>Role in Story</h3>
+            <ul id="role_in_story"></ul>
+        </div>
+        <footer class="footer">
+            © 2024 L Silvers - All Rights Reserved | Contact me on Instagram: <a href="https://instagram.com/darkfae_lsilvers">@darkfae_lsilvers</a>
+        </footer>
+    </div>
+
+    <script>
+        // JSON data for Riven's details
+        const rivenData = {
+            "name": "Riven Nightshade",
+            "description": "Riven is the High Fae King of the Northern Courts, known for his commanding presence and mastery of shadow magic.",
+            "appearance": {
+                "height_and_build": "Standing at a commanding 6'4\", Riven possesses a strong, lean muscular build, embodying the power and authority of a Fae King.",
+                "hair": "Long, black hair with faint blue undertones, often left loose and flowing down his shoulders, cascading like a shadow.",
+                "eyes": "Piercing, glacial blue eyes that seem to glow with an eerie light, especially when he taps into his magic or when his emotions are heightened.",
+                "skin": "His skin is smooth and pale, contrasting sharply with the dark tones of his armor, giving him an ethereal and intimidating presence.",
+                "markings": "A unique, intricate black rune etched into the center of his forehead symbolizes his mastery over shadow magic and his royal lineage.",
+                "horns_and_fae_features": "Riven doesn’t possess outward horns but has slightly elongated, pointed ears that subtly hint at his ancient power and fae heritage.",
+                "attire": "Riven wears dark, tailored armor crafted from a mix of blackened steel and enchanted leather.",
+                "weapon": "He wields an elegant greatsword forged from shadowsteel, infused with ice magic."
+            },
+            "personality": {
+                "public_persona": "Riven is seen as cold, calculating, and detached.",
+                "inner_conflicts_and_vulnerability": "He carries deep-seated fears of vulnerability.",
+                "with_those_he_trusts": "Riven reveals a warm, gentle side to those he trusts.",
+                "romantic_side": "Riven is tender and caring towards Lilah."
+            },
+            "abilities": {
+                "shadow_manipulation": "Shadow Weaving, Shadow Travel, Illusion Crafting",
+                "ice_manipulation": "Cryokinesis, Frost Aura, Ice Weaponry, Ice Constructs, Ice Healing",
+                "death_manipulation": "Necromancy, Soul Extraction, Death Touch",
+                "darkness_manipulation": "Dark Energy Projection, Darkness Cloaking, Emotional Manipulation",
+                "portal_creation": "Dimensional Rift Creation, Shadow Portals, Ice Portals",
+                "mating_bond_with_lilah": "Light Manipulation, Light Healing, Illumination, Resurrection"
+            },
+            "background": "Riven hails from the ancient Veilborn Dynasty, a royal bloodline with over 5,000 years of history.",
+            "relationships": {
+                "lilah_twilight": "Riven’s fated mate, representing the union of light and shadow.",
+                "draven_ashenborn": "Riven's loyal right hand and closest friend."
+            },
+            "role_in_story": {
+                "main_character_protagonist": "Riven serves as a central figure in the narrative.",
+                "protector_and_warrior_king": "He is a warrior and protector, defending his kingdom.",
+                "romantic_interest_and_mate": "As the mate to Lilah Twilight, the Goddess of Light."
+            }
+        };
+
+        // Populate the page with Riven's data
+        document.getElementById("name").textContent = rivenData.name;
+        document.getElementById("description").textContent = rivenData.description;
+
+        // Display appearance details
+        const appearanceList = document.getElementById("appearance");
+        Object.entries(rivenData.appearance).forEach(([key, value]) => {
+            const li = document.createElement("li");
+            li.textContent = `${key.replace(/_/g, " ")}: ${value}`;
+            appearanceList.appendChild(li);
+        });
+
+        // Display personality details
+        const personalityList = document.getElementById("personality");
+        Object.entries(rivenData.personality).forEach(([key, value]) => {
+            const li = document.createElement("li");
+            li.textContent = `${key.replace(/_/g, " ")}: ${value}`;
+            personalityList.appendChild(li);
+        });
+
+        // Display abilities
+        const abilitiesList = document.getElementById("abilities");
+        Object.entries(rivenData.abilities).forEach(([key, value]) => {
+            const li = document.createElement("li");
+            li.textContent = `${key.replace(/_/g, " ")}: ${value}`;
+            abilitiesList.appendChild(li);
+        });
+
+        // Display background
+        document.getElementById("background").textContent = rivenData.background;
+
+        // Display relationships
+        const relationshipsList = document.getElementById("relationships");
+        Object.entries(rivenData.relationships).forEach(([key, value]) => {
+            const li = document.createElement("li");
+            li.textContent = `${key.replace(/_/g, " ")}: ${value}`;
+            relationshipsList.appendChild(li);
+        });
+
+        // Display role in story
+        const roleList = document.getElementById("role_in_story");
+        Object.entries(rivenData.role_in_story).forEach(([key, value]) => {
+            const li = document.createElement("li");
+            li.textContent = `${key.replace(/_/g, " ")}: ${value}`;
+            roleList.appendChild(li);
+        });
+    </script>
+</body>
+</html>
+
