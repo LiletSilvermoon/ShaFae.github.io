@@ -226,8 +226,13 @@
         });
 
         // Display background
-        document.getElementById("background").textContent = rivenData.background;
-
+       // For Background
+const backgroundList = document.getElementById("background");
+Object.entries(rivenData.background).forEach(([key, value]) => {
+    const li = document.createElement("li");
+    li.textContent = `${key.replace(/_/g, " ")}: ${value}`;
+    backgroundList.appendChild(li);
+});
         // Display relationships
         const relationshipsList = document.getElementById("relationships");
         Object.entries(rivenData.relationships).forEach(([key, value]) => {
