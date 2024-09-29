@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Webpage featuring an image and providing access to a JSON file">
+    <title>Image and JSON File Access</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #121212; /* Dark background for the body */
+            color: #E0E0E0; /* Light grey text for readability on dark background */
+        }
+        h1, h2 {
+            color: #67C7EB; /* Light blue color for headings to add a bit of visual interest */
+        }
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: #1E1E1E; /* Darker shade for the container */
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.1); /* Lighter box-shadow */
+        }
+        img {
+            width: 100%; /* Responsive image width */
+            max-width: 600px; /* Maximum size of the image */
+            display: block; /* Centering the image */
+            margin: 0 auto; /* Auto margins for horizontal centering */
+        }
+        a {
+            color: #4FC3F7; /* Bright blue color for links */
+            text-decoration: none; /* No underline for links */
+            display: inline-block; /* Block-level link for better click area */
+            margin-top: 20px; /* Spacing above the link */
+        }
+        a:hover {
+            text-decoration: underline; /* Underline on hover for better user interaction feedback */
+        }
+        .footer {
+            text-align: center;
+            padding: 20px 0;
+            margin-top: 30px; /* Space between content and footer */
+            color: #AAA; /* Light gray for less emphasis */
+            font-size: 0.8rem; /* Smaller font size */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Featured Image and JSON Access</h1>
+        
+        <img src="lilah.png" alt="Lilah - a character from the novel Frost and Shadow">
+        <h2>Download JSON Data</h2>
+        <a href="lilah.json" download="lilah.json">Download JSON File</a>
+
+        <footer class="footer">
+            © 2024 L Silvers - All Rights Reserved | Contact me on Instagram: <a href="https://instagram.com/darkfae_lsilvers">@darkfae_lsilvers</a>
+        </footer>
+    </div>
+</body>
+</html>
