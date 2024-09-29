@@ -31,6 +31,7 @@
         a {
             color: #4FC3F7; /* Brighter blue color for links */
             text-decoration: none;
+            cursor: pointer; /* Change cursor to indicate interactivity */
         }
         a:hover {
             text-decoration: underline;
@@ -41,6 +42,14 @@
         .section-content {
             margin-left: 20px;
         }
+        #json-data {
+            white-space: pre-wrap; /* Ensures JSON data wraps correctly */
+            background-color: #1E1E1E;
+            padding: 10px;
+            border: 1px solid #333;
+            margin-top: 20px;
+            color: #E0E0E0;
+        }
     </style>
 </head>
 <body>
@@ -50,7 +59,7 @@
         <div class="index">
             <h2>Index</h2>
             <ul>
-                <li><a href="Lilah.json">Lilah Twilight</a></li>
+                <li><a onclick="fetchLilahData()">Lilah Twilight</a></li>
                 <li><a href="riven-nightshade.html">Riven Nightshade</a></li>
                 <li><a href="falcon-shadeborn.html">Baron Falcon Shadeborn</a></li>
                 <li><a href="thalassa-shadeborn.html">Baroness Thalassa Shadeborn</a></li>
@@ -76,6 +85,29 @@
                 <li><a href="nyssa.html">Nyssa (Sprite 4)</a></li>
             </ul>
         </div>
+        
+        <!-- Display area for Lilah's JSON data -->
+        <div id="json-data">Click "Lilah Twilight" above to load her details.</div>
     </div>
+
+    <script>
+        // Function to fetch Lilah's JSON data
+        function fetchLilahData() {
+            fetch('lilah.json')
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Network response was not ok');
+                    }
+                    return response.json();
+                })
+                .then(data => {
+                    document.getElementById('json-data').textContent = JSON.stringify(data, null, 2);
+                })
+                .catch(error => {
+                    console.error('Error fetching JSON data:', error);
+                    document.getElementById('json-data').textContent = 'Error loading JSON data.';
+                });
+        }
+    </script>
 </body>
 </html>
